@@ -1,4 +1,4 @@
-package com.example..signalr_flutter
+package com.example.signalr1
 
 import android.os.Looper
 import io.flutter.plugin.common.MethodChannel.Result
