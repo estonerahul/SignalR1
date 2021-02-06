@@ -32,7 +32,7 @@ class Signalr1Plugin: FlutterPlugin, MethodCallHandler {
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     when (call.method) {
-      CallMethod.ConnectToServer.value -> {
+      CallMethod1.ConnectToServer.value -> {
         val arguments = call.arguments as Map<*, *>
         @Suppress("UNCHECKED_CAST")
         SignalR1.connectToServer(
@@ -44,13 +44,13 @@ class Signalr1Plugin: FlutterPlugin, MethodCallHandler {
                 arguments["hubMethods"] as? List<String> ?: emptyList(),
                 result)
       }
-      CallMethod.Reconnect.value -> {
+      CallMethod1.Reconnect.value -> {
         SignalR1.reconnect(result)
       }
-      CallMethod.Stop.value -> {
+      CallMethod1.Stop.value -> {
         SignalR1.stop(result)
       }
-      CallMethod.ListenToHubMethod.value -> {
+      CallMethod1.ListenToHubMethod.value -> {
         if (call.arguments is String) {
           val methodName = call.arguments as String
           SignalR1.listenToHubMethod(methodName, result)
@@ -58,7 +58,7 @@ class Signalr1Plugin: FlutterPlugin, MethodCallHandler {
           result.error("Error", "Cast to String Failed", "")
         }
       }
-      CallMethod.InvokeServerMethod.value -> {
+      CallMethod1.InvokeServerMethod.value -> {
         val arguments = call.arguments as Map<*, *>
         @Suppress("UNCHECKED_CAST")
         SignalR1.invokeServerMethod(arguments["methodName"] as String, arguments["arguments"] as? List<Any>

@@ -9,7 +9,7 @@ import microsoft.aspnet.signalr.client.hubs.HubProxy
 import microsoft.aspnet.signalr.client.transport.LongPollingTransport
 import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport
 
-enum class CallMethod(val value: String) {
+enum class CallMethod1(val value: String) {
     ConnectToServer("connectToServer"),
     Reconnect("reconnect"),
     Stop("stop"),
