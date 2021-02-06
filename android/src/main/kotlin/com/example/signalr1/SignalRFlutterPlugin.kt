@@ -1,4 +1,4 @@
-package com.example.signalr_flutter
+package com.example.signalr1
 
 import androidx.annotation.NonNull;
 
