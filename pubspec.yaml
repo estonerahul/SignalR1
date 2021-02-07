@@ -29,7 +29,7 @@ flutter:
     platforms:
       android:
         package: com.example.signalr1
-        pluginClass: Signalr1Plugin
+        pluginClass: SignalRFlutterPlugin
       ios:
         pluginClass: Signalr1Plugin
 
