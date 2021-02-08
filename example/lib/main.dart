@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:signalr1/signalr1.dart';
+//import 'package:signalr/signalr.dart';
 import 'dart:async';
+
+import 'package:signalr1/signalr_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _signalRStatus = 'Unknown';
-  SignalR1 signalR1;
+  SignalR signalR1;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -24,7 +26,7 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    signalR1 = SignalR1('<Your SignalR Url>', "<Your Hub Name>",
+    signalR1 = SignalR('<Your SignalR Url>', "<Your Hub Name>",
         hubMethods: ["<Hub Method Name>"],
         statusChangeCallback: _onStatusChange,
         hubCallback: _onNewMessage);
